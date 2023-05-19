@@ -1,0 +1,48 @@
+{% load static %}
+
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="/" class="home-button">
+        <img src="../../static/home.png" alt="Accueil" class="home-icon">
+      </a>
+
+      {% block content %}
+      <h1>Ajouter une solution</h1>
+      <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Ajouter</button>
+      </form>
+      {% endblock %}
+  
+  
+      <div class="center">
+          <div class="lien"><a href="../ajouter_problemes/">Ajouter un problème</a></div>
+      </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

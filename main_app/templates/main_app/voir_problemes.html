@@ -1,0 +1,34 @@
+{% load static %}
+
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <title>Document</title>
+</head>
+<body>
+    
+  <a href="/" class="home-button">
+    <img src="../../static/home.png" alt="Accueil" class="home-icon">
+  </a>
+
+  
+
+    {% block content %}
+  <h1>Liste des problèmes</h1>
+  <ul>
+  {% for probleme in problemes %}
+    <li><a href="{% url 'detail_probleme' pk=probleme.pk %}">{{ probleme.nom }}</a></li> <!-- pour pouvoir cliquer et ainsi voir les solutions -->
+
+
+
+  {% endfor %}
+  </ul>
+{% endblock %}
+
+</body>
+</html>
